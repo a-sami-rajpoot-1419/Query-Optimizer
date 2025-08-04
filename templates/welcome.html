@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to SQL Performance Optimizer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e9f7ef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .welcome-container {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="welcome-container">
+    <h1>🚀 Welcome to SQL Performance Optimizer</h1>
+    <p>Please enter your SQL Server connection string to continue:</p>
+    <form action="/connect" method="POST">
+        <input type="text" name="connection_string" class="form-control" placeholder="DRIVER={ODBC Driver 17 for SQL Server};SERVER=localhost\\SQLEXPRESS;DATABASE=PerformanceTestDB;Trusted_Connection=yes;" required>
+        <button type="submit" class="btn btn-success mt-3">Connect</button>
+    </form>
+
+    {% if message %}
+        <div class="alert alert-danger mt-4">{{ message }}</div>
+    {% endif %}
+
+    <footer>
+        <p>SQL Performance Optimizer &copy; 2025</p>
+    </footer>
+</div>
+
+</body>
+</html>
